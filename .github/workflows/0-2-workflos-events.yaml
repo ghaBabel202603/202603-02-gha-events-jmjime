@@ -1,8 +1,12 @@
 name: '02 - Eventos'
-on: push
+on: 
+    - push
+    - pull_request
+    - schedule: cron '2 * * * *'
+    - workflow_dispatch
 jobs:
-    build:
+    echo-event:
       runs-on: ubuntu-latest
       steps:
-        - name: 'ShowTrigger'
+        - name: ShowTrigger
           run: "Evento que desencadenó el workflow: ${{ github.event_name }}"
