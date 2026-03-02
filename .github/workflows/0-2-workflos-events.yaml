@@ -1,11 +1,13 @@
 name: '02 - Eventos'
 on: 
-    - push
-    - pull_request
-    - schedule: cron '2 * * * *'
-    - workflow_dispatch
+    push:
+    pull_request:
+    schedule:
+      - cron: "55 17 * * *"
+    workflow_dispatch:
 jobs:
-    echo-event:
+    ShowTrigger:
+      name: "ShowTriggerJob"
       runs-on: ubuntu-latest
       steps:
         - name: ShowTrigger
