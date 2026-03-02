@@ -6,9 +6,10 @@ on:
       - cron: "55 17 * * *"
     workflow_dispatch:
 jobs:
-    ShowTrigger:
+    job1:
       name: "ShowTriggerJob"
       runs-on: ubuntu-latest
       steps:
-        - name: ShowTrigger
-          run: "Evento que desencadenó el workflow: ${{ github.event_name }}"
+        - name: "ShowTrigger"
+          run: |
+            echo "Evento : ${{ github.event_name }}"
